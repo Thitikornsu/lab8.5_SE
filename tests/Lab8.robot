@@ -8,10 +8,11 @@ Open Browser To Login Page
     Call Method    ${options}    add_argument    --no-sandbox
     Call Method    ${options}    add_argument    --disable-dev-shm-usage
 
-    Open Browser    https://computing.kku.ac.th    chrome    options=${options}
+    Open Browser    https://computing.kku.ac.th    chrome
     Close Browser
 
 *** Test Cases ***
 Open KKU Website
     Open Browser To Login Page
+
 
