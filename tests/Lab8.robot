@@ -1,18 +1,18 @@
 *** Settings ***
 Library    SeleniumLibrary
 
-*** Keywords ***
-Open Browser To Login Page
+*** Test Cases ***
+Open KKU Website
     ${options}=    Evaluate    sys.modules['selenium.webdriver'].ChromeOptions()    sys
     Call Method    ${options}    add_argument    --headless
     Call Method    ${options}    add_argument    --no-sandbox
     Call Method    ${options}    add_argument    --disable-dev-shm-usage
 
-    Open Browser    https://computing.kku.ac.th    chrome
+    Open Browser
+    ...    https://computing.kku.ac.th
+    ...    chrome
+    ...    options=${options}
+    ...    executable_path=/usr/bin/chromedriver
+
+    Sleep    2s
     Close Browser
-
-*** Test Cases ***
-Open KKU Website
-    Open Browser To Login Page
-
-
